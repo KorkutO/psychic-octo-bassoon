@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Value Atlas Studio</title>
+    <meta
+      name="description"
+      content="Professional visual research services for maps, social data stories, and interactive public-facing knowledge products."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Value Atlas Studio home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Value Atlas Studio</span>
+      </a>
+      <nav class="nav-links" aria-label="Main sections">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#methods">Method</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Maps, social data, interpretation</p>
+          <h1 id="hero-title">Research visuals that make complex public questions visible.</h1>
+          <p class="hero-text">
+            A compact studio for turning datasets, field notes, archives, and theory into publishable PNG maps,
+            interactive web pieces, and decision-ready visual reports.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View work</a>
+            <a class="button secondary" href="#contact">Start a project</a>
+          </div>
+        </div>
+
+        <div class="atlas-panel" aria-label="Interactive atlas preview">
+          <div class="panel-topline">
+            <span>Public attitudes explorer</span>
+            <span id="active-year">2026</span>
+          </div>
+          <div class="map-stage">
+            <div class="map-grid" aria-hidden="true">
+              <span class="region r1" data-score="74"></span>
+              <span class="region r2" data-score="42"></span>
+              <span class="region r3" data-score="61"></span>
+              <span class="region r4" data-score="88"></span>
+              <span class="region r5" data-score="55"></span>
+              <span class="region r6" data-score="37"></span>
+              <span class="region r7" data-score="69"></span>
+              <span class="region r8" data-score="80"></span>
+              <span class="region r9" data-score="49"></span>
+            </div>
+            <div class="map-insight">
+              <p id="map-kicker">Selected layer</p>
+              <h2 id="map-title">Trust and social confidence</h2>
+              <p id="map-summary">Regional differences become clearer when the map is paired with short interpretive notes and source transparency.</p>
+            </div>
+          </div>
+          <div class="layer-tabs" role="tablist" aria-label="Atlas layers">
+            <button class="layer-tab active" type="button" data-layer="trust">Trust</button>
+            <button class="layer-tab" type="button" data-layer="migration">Migration</button>
+            <button class="layer-tab" type="button" data-layer="memory">Memory</button>
+            <button class="layer-tab" type="button" data-layer="institutions">Institutions</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section work-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio system</p>
+          <h2 id="work-title">PNG maps and interactive projects in one public home.</h2>
+        </div>
+        <div class="work-grid">
+          <article class="work-card featured">
+            <div class="card-visual contour-visual" aria-hidden="true"></div>
+            <div class="card-body">
+              <p class="card-meta">PNG map series</p>
+              <h3>Comparative value landscapes</h3>
+              <p>Clean map exports for reports, lectures, proposals, and public explainers.</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="card-visual chart-visual" aria-hidden="true"></div>
+            <div class="card-body">
+              <p class="card-meta">Interactive website</p>
+              <h3>Attitude change dashboard</h3>
+              <p>Filters, annotations, and small narratives around survey or archival indicators.</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="card-visual archive-visual" aria-hidden="true"></div>
+            <div class="card-body">
+              <p class="card-meta">Research story</p>
+              <h3>Archive-to-map essay</h3>
+              <p>Historical material organized as a visual argument, not only a text page.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section services-section" id="services" aria-labelledby="services-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Services</p>
+          <h2 id="services-title">Built for institutions, researchers, NGOs, and public projects.</h2>
+        </div>
+        <div class="service-list">
+          <article>
+            <span>01</span>
+            <h3>Map publication pack</h3>
+            <p>Polished PNG maps, captions, legends, source notes, and export sizes for web, reports, and slides.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Interactive research page</h3>
+            <p>A focused website with filters, charts, map layers, annotations, and a clear public narrative.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Visual concept development</h3>
+            <p>Turning abstract academic material into a concrete visual grammar for audiences outside the discipline.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section method-section" id="methods" aria-labelledby="method-title">
+        <div>
+          <p class="eyebrow">Method</p>
+          <h2 id="method-title">Interpretation first, decoration second.</h2>
+        </div>
+        <div class="method-steps">
+          <article>
+            <h3>Define the question</h3>
+            <p>What should the reader be able to see, compare, or decide?</p>
+          </article>
+          <article>
+            <h3>Shape the evidence</h3>
+            <p>Clean sources, document uncertainty, and select the right visual form.</p>
+          </article>
+          <article>
+            <h3>Publish the object</h3>
+            <p>Deliver static maps, interactive pages, and reusable project files.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Bring a dataset, theory, archive, or map idea.</h2>
+        </div>
+        <a class="button primary" href="https://github.com/KorkutO" target="_blank" rel="noreferrer">Contact on GitHub</a>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
