@@ -1,19 +1,19 @@
 :root {
   color-scheme: light;
-  --ink: #101616;
-  --muted: #586663;
-  --soft: #80908c;
-  --raki: #f8faf9;
+  --ink: #071815;
+  --muted: #4d625c;
+  --soft: #6f8780;
+  --raki: #f3fffb;
   --panel: #ffffff;
-  --line: #dce5e2;
-  --green: #0c3b31;
-  --green-2: #27735f;
-  --green-soft: #e5f2ed;
-  --mint: #dff4ed;
-  --bordo: #8d1641;
-  --bordo-dark: #5f1230;
-  --bordo-soft: #f2e3ea;
-  --shadow: 0 18px 48px rgba(10, 32, 29, 0.09);
+  --line: #cfe0dc;
+  --green: #063b31;
+  --green-2: #14906f;
+  --green-soft: #d8f4eb;
+  --mint: #c9f5e9;
+  --bordo: #a10f46;
+  --bordo-dark: #64112f;
+  --bordo-soft: #f5d8e5;
+  --shadow: 0 18px 54px rgba(4, 39, 33, 0.13);
 }
 
 * {
@@ -29,9 +29,9 @@ body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background:
-    linear-gradient(135deg, rgba(12, 59, 49, 0.075), transparent 30%),
-    linear-gradient(315deg, rgba(141, 22, 65, 0.055), transparent 34%),
-    var(--raki);
+    radial-gradient(circle at 8% 8%, rgba(20, 144, 111, 0.22), transparent 26%),
+    radial-gradient(circle at 92% 12%, rgba(161, 15, 70, 0.14), transparent 28%),
+    linear-gradient(180deg, #f3fffb 0%, #eefbf7 48%, #f8fffd 100%);
 }
 
 a {
@@ -48,8 +48,8 @@ a {
   justify-content: space-between;
   gap: 24px;
   padding: 15px clamp(18px, 5vw, 62px);
-  border-bottom: 1px solid rgba(220, 229, 226, 0.95);
-  background: rgba(248, 250, 249, 0.92);
+  border-bottom: 1px solid rgba(207, 224, 220, 0.95);
+  background: rgba(243, 255, 251, 0.86);
   backdrop-filter: blur(18px);
 }
 
@@ -167,19 +167,19 @@ h3 {
 }
 
 .button.primary {
-  color: var(--raki);
+  color: #ffffff;
   border-color: var(--green);
   background: var(--green);
 }
 
 .button.secondary {
   color: var(--bordo-dark);
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .atlas-panel {
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(207, 224, 220, 0.9);
   border-radius: 8px;
   background: var(--panel);
   box-shadow: var(--shadow);
@@ -203,9 +203,9 @@ h3 {
   grid-template-rows: 1fr auto;
   padding: 20px;
   background:
-    linear-gradient(135deg, rgba(12, 59, 49, 0.18), transparent 40%),
-    linear-gradient(315deg, rgba(141, 22, 65, 0.12), transparent 44%),
-    #ffffff;
+    radial-gradient(circle at 20% 12%, rgba(20, 144, 111, 0.3), transparent 32%),
+    radial-gradient(circle at 78% 18%, rgba(161, 15, 70, 0.18), transparent 34%),
+    linear-gradient(135deg, #ffffff, #e6fbf4 62%, #ffffff);
 }
 
 .map-grid {
@@ -218,9 +218,9 @@ h3 {
 }
 
 .region {
-  border: 1px solid rgba(10, 32, 29, 0.1);
+  border: 1px solid rgba(4, 39, 33, 0.12);
   border-radius: 5px;
-  background: color-mix(in srgb, var(--green-2) calc(var(--score) * 0.88%), var(--bordo-soft));
+  background: color-mix(in srgb, var(--green-2) calc(var(--score) * 0.9%), var(--bordo-soft));
 }
 
 .r1 { --score: 74; grid-column: 2 / 4; grid-row: 1 / 3; }
@@ -273,14 +273,14 @@ h3 {
 }
 
 .layer-tab.active {
-  color: var(--raki);
+  color: #ffffff;
   border-color: var(--bordo);
   background: var(--bordo);
 }
 
 .section {
   padding: clamp(44px, 6.5vw, 78px) clamp(18px, 5vw, 62px);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(207, 224, 220, 0.85);
 }
 
 .section-heading {
@@ -300,9 +300,9 @@ h3 {
 
 .work-card,
 .service-list article {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(207, 224, 220, 0.9);
   border-radius: 8px;
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .work-card {
@@ -319,24 +319,24 @@ h3 {
 
 .contour-visual {
   background:
-    radial-gradient(ellipse at 28% 36%, transparent 18%, rgba(12, 59, 49, 0.3) 19% 20%, transparent 21% 31%, rgba(141, 22, 65, 0.16) 32% 33%, transparent 34%),
-    radial-gradient(ellipse at 64% 54%, transparent 16%, rgba(141, 22, 65, 0.24) 17% 18%, transparent 19% 28%, rgba(12, 59, 49, 0.14) 29% 30%, transparent 31%),
+    radial-gradient(ellipse at 28% 36%, transparent 18%, rgba(12, 59, 49, 0.42) 19% 20%, transparent 21% 31%, rgba(161, 15, 70, 0.24) 32% 33%, transparent 34%),
+    radial-gradient(ellipse at 64% 54%, transparent 16%, rgba(161, 15, 70, 0.28) 17% 18%, transparent 19% 28%, rgba(20, 144, 111, 0.2) 29% 30%, transparent 31%),
     var(--mint);
 }
 
 .chart-visual {
   background:
-    linear-gradient(90deg, transparent 11%, rgba(141, 22, 65, 0.09) 12%, transparent 13%),
-    linear-gradient(180deg, transparent 11%, rgba(12, 59, 49, 0.12) 12%, transparent 13%),
-    linear-gradient(135deg, rgba(12, 59, 49, 0.2), rgba(141, 22, 65, 0.14)),
+    linear-gradient(90deg, transparent 11%, rgba(161, 15, 70, 0.12) 12%, transparent 13%),
+    linear-gradient(180deg, transparent 11%, rgba(20, 144, 111, 0.16) 12%, transparent 13%),
+    linear-gradient(135deg, rgba(20, 144, 111, 0.28), rgba(161, 15, 70, 0.2)),
     #ffffff;
 }
 
 .archive-visual {
   background:
-    linear-gradient(130deg, rgba(12, 59, 49, 0.16) 0 24%, transparent 24% 100%),
-    linear-gradient(35deg, rgba(141, 22, 65, 0.18) 0 34%, transparent 34% 100%),
-    repeating-linear-gradient(0deg, rgba(12, 59, 49, 0.08) 0 1px, transparent 1px 14px),
+    linear-gradient(130deg, rgba(20, 144, 111, 0.22) 0 24%, transparent 24% 100%),
+    linear-gradient(35deg, rgba(161, 15, 70, 0.22) 0 34%, transparent 34% 100%),
+    repeating-linear-gradient(0deg, rgba(12, 59, 49, 0.09) 0 1px, transparent 1px 14px),
     #ffffff;
 }
 
@@ -367,8 +367,8 @@ h3 {
   justify-content: space-between;
   gap: 24px;
   padding: clamp(40px, 6vw, 62px) clamp(18px, 5vw, 62px);
-  color: var(--raki);
-  background: linear-gradient(135deg, #0c3b31 0%, #0c3b31 48%, #5f1230 100%);
+  color: #ffffff;
+  background: linear-gradient(135deg, #063b31 0%, #063b31 46%, #64112f 100%);
 }
 
 .contact-section h2 {
@@ -380,13 +380,13 @@ h3 {
 .contact-section p {
   max-width: 560px;
   margin-bottom: 0;
-  color: rgba(248, 250, 249, 0.76);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .contact-section .button.primary {
   flex: 0 0 auto;
-  border-color: var(--raki);
-  background: var(--raki);
+  border-color: #ffffff;
+  background: #ffffff;
   color: var(--ink);
 }
 
