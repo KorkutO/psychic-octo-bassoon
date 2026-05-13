@@ -1,18 +1,18 @@
 :root {
   color-scheme: light;
-  --ink: #11161a;
-  --muted: #5f6871;
-  --soft: #87909b;
-  --raki: #f9fbff;
+  --ink: #171614;
+  --muted: #67635d;
+  --soft: #8c877f;
+  --raki: #fffdf7;
   --panel: #ffffff;
-  --line: #dfe6e8;
-  --green: #0f5a49;
-  --green-2: #2a8c76;
-  --purple: #6250a4;
-  --purple-soft: #ece9ff;
-  --bordo: #8b1f45;
-  --sky-soft: #eaf6f7;
-  --shadow: 0 18px 48px rgba(12, 29, 36, 0.08);
+  --line: #e6e0d5;
+  --green: #123f32;
+  --green-2: #2f705b;
+  --green-soft: #e8f0ea;
+  --bordo: #86253f;
+  --bordo-dark: #64192f;
+  --bordo-soft: #f2e4e8;
+  --shadow: 0 18px 48px rgba(29, 22, 18, 0.08);
 }
 
 * {
@@ -28,8 +28,8 @@ body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background:
-    linear-gradient(135deg, rgba(42, 140, 118, 0.06), transparent 30%),
-    linear-gradient(315deg, rgba(98, 80, 164, 0.055), transparent 32%),
+    linear-gradient(135deg, rgba(18, 63, 50, 0.055), transparent 32%),
+    linear-gradient(315deg, rgba(134, 37, 63, 0.045), transparent 34%),
     var(--raki);
 }
 
@@ -47,8 +47,8 @@ a {
   justify-content: space-between;
   gap: 24px;
   padding: 15px clamp(18px, 5vw, 62px);
-  border-bottom: 1px solid rgba(223, 230, 232, 0.92);
-  background: rgba(249, 251, 255, 0.9);
+  border-bottom: 1px solid rgba(230, 224, 213, 0.92);
+  background: rgba(255, 253, 247, 0.9);
   backdrop-filter: blur(18px);
 }
 
@@ -73,7 +73,7 @@ a {
   border-radius: 5px;
   background:
     linear-gradient(135deg, var(--green) 0 46%, transparent 46% 54%, var(--bordo) 54%),
-    var(--purple);
+    #f7f0e6;
 }
 
 .nav-links {
@@ -166,13 +166,13 @@ h3 {
 }
 
 .button.primary {
-  color: #ffffff;
+  color: var(--raki);
   border-color: var(--green);
   background: var(--green);
 }
 
 .button.secondary {
-  color: var(--purple);
+  color: var(--bordo-dark);
   background: var(--panel);
 }
 
@@ -202,8 +202,8 @@ h3 {
   grid-template-rows: 1fr auto;
   padding: 20px;
   background:
-    linear-gradient(135deg, rgba(42, 140, 118, 0.14), transparent 38%),
-    linear-gradient(315deg, rgba(98, 80, 164, 0.12), transparent 42%),
+    linear-gradient(135deg, rgba(18, 63, 50, 0.14), transparent 40%),
+    linear-gradient(315deg, rgba(134, 37, 63, 0.1), transparent 44%),
     #ffffff;
 }
 
@@ -217,9 +217,9 @@ h3 {
 }
 
 .region {
-  border: 1px solid rgba(12, 29, 36, 0.1);
+  border: 1px solid rgba(29, 22, 18, 0.1);
   border-radius: 5px;
-  background: color-mix(in srgb, var(--green-2) calc(var(--score) * 0.9%), var(--purple-soft));
+  background: color-mix(in srgb, var(--green-2) calc(var(--score) * 0.88%), var(--bordo-soft));
 }
 
 .r1 { --score: 74; grid-column: 2 / 4; grid-row: 1 / 3; }
@@ -272,9 +272,9 @@ h3 {
 }
 
 .layer-tab.active {
-  color: #ffffff;
-  border-color: var(--purple);
-  background: var(--purple);
+  color: var(--raki);
+  border-color: var(--bordo);
+  background: var(--bordo);
 }
 
 .section {
@@ -318,24 +318,24 @@ h3 {
 
 .contour-visual {
   background:
-    radial-gradient(ellipse at 28% 36%, transparent 18%, rgba(15, 90, 73, 0.28) 19% 20%, transparent 21% 31%, rgba(98, 80, 164, 0.2) 32% 33%, transparent 34%),
-    radial-gradient(ellipse at 64% 54%, transparent 16%, rgba(139, 31, 69, 0.22) 17% 18%, transparent 19% 28%, rgba(139, 31, 69, 0.13) 29% 30%, transparent 31%),
-    var(--sky-soft);
+    radial-gradient(ellipse at 28% 36%, transparent 18%, rgba(18, 63, 50, 0.28) 19% 20%, transparent 21% 31%, rgba(134, 37, 63, 0.14) 32% 33%, transparent 34%),
+    radial-gradient(ellipse at 64% 54%, transparent 16%, rgba(134, 37, 63, 0.22) 17% 18%, transparent 19% 28%, rgba(18, 63, 50, 0.12) 29% 30%, transparent 31%),
+    var(--green-soft);
 }
 
 .chart-visual {
   background:
-    linear-gradient(90deg, transparent 11%, rgba(98, 80, 164, 0.09) 12%, transparent 13%),
-    linear-gradient(180deg, transparent 11%, rgba(42, 140, 118, 0.1) 12%, transparent 13%),
-    linear-gradient(135deg, rgba(98, 80, 164, 0.22), rgba(42, 140, 118, 0.14)),
+    linear-gradient(90deg, transparent 11%, rgba(134, 37, 63, 0.09) 12%, transparent 13%),
+    linear-gradient(180deg, transparent 11%, rgba(18, 63, 50, 0.1) 12%, transparent 13%),
+    linear-gradient(135deg, rgba(18, 63, 50, 0.18), rgba(134, 37, 63, 0.13)),
     #ffffff;
 }
 
 .archive-visual {
   background:
-    linear-gradient(130deg, rgba(42, 140, 118, 0.14) 0 24%, transparent 24% 100%),
-    linear-gradient(35deg, rgba(139, 31, 69, 0.16) 0 34%, transparent 34% 100%),
-    repeating-linear-gradient(0deg, rgba(98, 80, 164, 0.07) 0 1px, transparent 1px 14px),
+    linear-gradient(130deg, rgba(18, 63, 50, 0.14) 0 24%, transparent 24% 100%),
+    linear-gradient(35deg, rgba(134, 37, 63, 0.16) 0 34%, transparent 34% 100%),
+    repeating-linear-gradient(0deg, rgba(18, 63, 50, 0.07) 0 1px, transparent 1px 14px),
     #ffffff;
 }
 
@@ -366,8 +366,8 @@ h3 {
   justify-content: space-between;
   gap: 24px;
   padding: clamp(40px, 6vw, 62px) clamp(18px, 5vw, 62px);
-  color: #ffffff;
-  background: linear-gradient(135deg, #0f5a49, #30255f 68%, #8b1f45);
+  color: var(--raki);
+  background: linear-gradient(135deg, #123f32 0%, #123f32 52%, #64192f 100%);
 }
 
 .contact-section h2 {
@@ -379,13 +379,13 @@ h3 {
 .contact-section p {
   max-width: 560px;
   margin-bottom: 0;
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 253, 247, 0.76);
 }
 
 .contact-section .button.primary {
   flex: 0 0 auto;
-  border-color: #ffffff;
-  background: #ffffff;
+  border-color: var(--raki);
+  background: var(--raki);
   color: var(--ink);
 }
 
