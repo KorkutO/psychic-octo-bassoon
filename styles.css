@@ -1,19 +1,17 @@
 :root {
   color-scheme: light;
-  --ink: #071815;
-  --muted: #4d625c;
-  --soft: #6f8780;
-  --raki: #f3fffb;
+  --ink: #071817;
+  --muted: #4f6261;
+  --soft: #748886;
+  --raki: #f7fbff;
   --panel: #ffffff;
-  --line: #cfe0dc;
-  --green: #063b31;
-  --green-2: #14906f;
-  --green-soft: #d8f4eb;
-  --mint: #c9f5e9;
+  --line: #cfdddf;
+  --green: #063f36;
+  --green-2: #10896d;
+  --green-soft: #d7f2eb;
   --bordo: #a10f46;
-  --bordo-dark: #64112f;
-  --bordo-soft: #f5d8e5;
-  --shadow: 0 18px 54px rgba(4, 39, 33, 0.13);
+  --bordo-dark: #5f1230;
+  --shadow: 0 22px 70px rgba(5, 33, 39, 0.14);
 }
 
 * {
@@ -29,9 +27,9 @@ body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 8% 8%, rgba(20, 144, 111, 0.22), transparent 26%),
-    radial-gradient(circle at 92% 12%, rgba(161, 15, 70, 0.14), transparent 28%),
-    linear-gradient(180deg, #f3fffb 0%, #eefbf7 48%, #f8fffd 100%);
+    radial-gradient(circle at 4% 8%, rgba(16, 137, 109, 0.24), transparent 25%),
+    radial-gradient(circle at 92% 6%, rgba(161, 15, 70, 0.16), transparent 24%),
+    linear-gradient(180deg, #f7fbff 0%, #eef8fb 46%, #f8fbff 100%);
 }
 
 a {
@@ -48,8 +46,8 @@ a {
   justify-content: space-between;
   gap: 24px;
   padding: 15px clamp(18px, 5vw, 62px);
-  border-bottom: 1px solid rgba(207, 224, 220, 0.95);
-  background: rgba(243, 255, 251, 0.86);
+  border-bottom: 1px solid rgba(207, 221, 223, 0.9);
+  background: rgba(247, 251, 255, 0.88);
   backdrop-filter: blur(18px);
 }
 
@@ -92,13 +90,22 @@ a {
   min-height: calc(100vh - 62px);
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(330px, 1.1fr);
-  gap: clamp(30px, 6vw, 76px);
+  gap: clamp(34px, 6vw, 82px);
   align-items: center;
-  padding: clamp(46px, 7vw, 82px) clamp(18px, 5vw, 62px) 44px;
+  padding: clamp(48px, 7vw, 86px) clamp(18px, 5vw, 62px) 46px;
 }
 
 .hero-copy {
-  max-width: 600px;
+  max-width: 610px;
+}
+
+.studio-line {
+  margin: 0 0 13px;
+  color: var(--bordo);
+  font-size: 0.73rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
 h1,
@@ -117,26 +124,25 @@ h2 {
 }
 
 h1 {
-  max-width: 610px;
+  max-width: 620px;
   margin-bottom: 20px;
-  font-size: clamp(2.25rem, 4.35vw, 3.95rem);
+  font-size: clamp(2.2rem, 4.1vw, 3.75rem);
 }
 
 h2 {
   margin-bottom: 16px;
-  font-size: clamp(1.55rem, 2.85vw, 2.55rem);
+  font-size: clamp(1.5rem, 2.7vw, 2.45rem);
 }
 
 h3 {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
   font-size: 1rem;
   letter-spacing: 0;
 }
 
 .hero-text,
-.section-heading p,
-.work-card p,
-.service-list p,
+.work-item p,
+.service-lines p,
 .map-insight p,
 .contact-section p {
   color: var(--muted);
@@ -144,7 +150,7 @@ h3 {
 }
 
 .hero-text {
-  max-width: 540px;
+  max-width: 550px;
   margin-bottom: 27px;
   font-size: 1.01rem;
 }
@@ -179,7 +185,7 @@ h3 {
 
 .atlas-panel {
   overflow: hidden;
-  border: 1px solid rgba(207, 224, 220, 0.9);
+  border: 1px solid rgba(207, 221, 223, 0.95);
   border-radius: 8px;
   background: var(--panel);
   box-shadow: var(--shadow);
@@ -203,9 +209,9 @@ h3 {
   grid-template-rows: 1fr auto;
   padding: 20px;
   background:
-    radial-gradient(circle at 20% 12%, rgba(20, 144, 111, 0.3), transparent 32%),
-    radial-gradient(circle at 78% 18%, rgba(161, 15, 70, 0.18), transparent 34%),
-    linear-gradient(135deg, #ffffff, #e6fbf4 62%, #ffffff);
+    radial-gradient(circle at 18% 12%, rgba(16, 137, 109, 0.34), transparent 32%),
+    radial-gradient(circle at 78% 16%, rgba(161, 15, 70, 0.22), transparent 34%),
+    linear-gradient(135deg, #ffffff, #ddf7f0 62%, #ffffff);
 }
 
 .map-grid {
@@ -218,9 +224,9 @@ h3 {
 }
 
 .region {
-  border: 1px solid rgba(4, 39, 33, 0.12);
+  border: 1px solid rgba(5, 33, 39, 0.12);
   border-radius: 5px;
-  background: color-mix(in srgb, var(--green-2) calc(var(--score) * 0.9%), var(--bordo-soft));
+  background: color-mix(in srgb, var(--green-2) calc(var(--score) * 0.9%), #f1d7e2);
 }
 
 .r1 { --score: 74; grid-column: 2 / 4; grid-row: 1 / 3; }
@@ -240,7 +246,7 @@ h3 {
 
 .map-insight h2 {
   margin-bottom: 8px;
-  font-size: clamp(1.25rem, 2vw, 1.78rem);
+  font-size: clamp(1.22rem, 2vw, 1.72rem);
 }
 
 #map-kicker {
@@ -279,86 +285,61 @@ h3 {
 }
 
 .section {
-  padding: clamp(44px, 6.5vw, 78px) clamp(18px, 5vw, 62px);
-  border-top: 1px solid rgba(207, 224, 220, 0.85);
+  padding: clamp(50px, 7vw, 88px) clamp(18px, 5vw, 62px);
+  border-top: 1px solid rgba(207, 221, 223, 0.78);
 }
 
 .section-heading {
-  max-width: 650px;
-  margin-bottom: 24px;
+  max-width: 680px;
+  margin-bottom: 28px;
 }
 
 .section-heading.compact {
   max-width: 760px;
 }
 
-.work-grid {
+.work-list {
   display: grid;
-  grid-template-columns: 1.12fr 0.94fr 0.94fr;
-  gap: 16px;
+  gap: 0;
+  border-top: 1px solid rgba(7, 24, 23, 0.2);
 }
 
-.work-card,
-.service-list article {
-  border: 1px solid rgba(207, 224, 220, 0.9);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.work-card {
-  overflow: hidden;
-}
-
-.card-visual {
-  min-height: 172px;
-}
-
-.featured .card-visual {
-  min-height: 222px;
-}
-
-.contour-visual {
-  background:
-    radial-gradient(ellipse at 28% 36%, transparent 18%, rgba(12, 59, 49, 0.42) 19% 20%, transparent 21% 31%, rgba(161, 15, 70, 0.24) 32% 33%, transparent 34%),
-    radial-gradient(ellipse at 64% 54%, transparent 16%, rgba(161, 15, 70, 0.28) 17% 18%, transparent 19% 28%, rgba(20, 144, 111, 0.2) 29% 30%, transparent 31%),
-    var(--mint);
-}
-
-.chart-visual {
-  background:
-    linear-gradient(90deg, transparent 11%, rgba(161, 15, 70, 0.12) 12%, transparent 13%),
-    linear-gradient(180deg, transparent 11%, rgba(20, 144, 111, 0.16) 12%, transparent 13%),
-    linear-gradient(135deg, rgba(20, 144, 111, 0.28), rgba(161, 15, 70, 0.2)),
-    #ffffff;
-}
-
-.archive-visual {
-  background:
-    linear-gradient(130deg, rgba(20, 144, 111, 0.22) 0 24%, transparent 24% 100%),
-    linear-gradient(35deg, rgba(161, 15, 70, 0.22) 0 34%, transparent 34% 100%),
-    repeating-linear-gradient(0deg, rgba(12, 59, 49, 0.09) 0 1px, transparent 1px 14px),
-    #ffffff;
-}
-
-.card-body {
-  padding: 19px;
-}
-
-.service-list {
+.work-item {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: 54px minmax(180px, 0.45fr) minmax(240px, 1fr);
+  gap: clamp(16px, 3vw, 36px);
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(7, 24, 23, 0.16);
 }
 
-.service-list article {
-  padding: 21px;
-}
-
+.work-item span,
 .service-list span {
-  display: block;
-  margin-bottom: 24px;
   color: var(--bordo);
   font-weight: 850;
+}
+
+.work-item h3,
+.work-item p {
+  margin-bottom: 0;
+}
+
+.service-lines {
+  display: grid;
+  gap: 18px;
+  max-width: 960px;
+}
+
+.service-lines p {
+  margin: 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(7, 24, 23, 0.14);
+}
+
+.service-lines strong {
+  display: inline-block;
+  min-width: 220px;
+  color: var(--green);
 }
 
 .contact-section {
@@ -366,15 +347,19 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: clamp(40px, 6vw, 62px) clamp(18px, 5vw, 62px);
+  padding: clamp(42px, 6vw, 70px) clamp(18px, 5vw, 62px);
   color: #ffffff;
-  background: linear-gradient(135deg, #063b31 0%, #063b31 46%, #64112f 100%);
+  background: linear-gradient(135deg, #063f36 0%, #063f36 46%, #5f1230 100%);
+}
+
+.contact-section .studio-line {
+  color: rgba(255, 255, 255, 0.76);
 }
 
 .contact-section h2 {
   max-width: 680px;
   margin: 0 0 10px;
-  font-size: clamp(1.55rem, 2.9vw, 2.55rem);
+  font-size: clamp(1.5rem, 2.75vw, 2.4rem);
 }
 
 .contact-section p {
@@ -396,14 +381,18 @@ h3 {
     min-height: auto;
   }
 
-  .work-grid,
-  .service-list {
-    grid-template-columns: 1fr;
+  .work-item {
+    grid-template-columns: 44px 1fr;
   }
 
-  .featured .card-visual,
-  .card-visual {
-    min-height: 190px;
+  .work-item p {
+    grid-column: 2;
+  }
+
+  .service-lines strong {
+    display: block;
+    min-width: 0;
+    margin-bottom: 5px;
   }
 }
 
@@ -426,7 +415,7 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2rem, 10vw, 3.1rem);
+    font-size: clamp(2rem, 10vw, 3.05rem);
   }
 
   .map-stage {
