@@ -1,4 +1,4 @@
-# Value Atlas Studio
+# Blossom
 
 A professional static website for publishing PNG maps, interactive research pages, and visual explanations of academic or social data projects.
 
