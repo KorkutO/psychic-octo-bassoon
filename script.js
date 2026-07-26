@@ -44,18 +44,27 @@ const puzzles = [
 ];
 
 const pieces = {
-  wp: "♙",
-  wn: "♘",
-  wb: "♗",
-  wr: "♖",
-  wq: "♕",
-  wk: "♔",
-  bp: "♟",
-  bn: "♞",
-  bb: "♝",
-  br: "♜",
-  bq: "♛",
-  bk: "♚",
+  wp: "â™™",
+  wn: "â™˜",
+  wb: "â™—",
+  wr: "â™–",
+  wq: "â™•",
+  wk: "â™”",
+  bp: "â™Ÿ",
+  bn: "â™",
+  bb: "â™",
+  br: "â™œ",
+  bq: "â™›",
+  bk: "â™š",
+};
+
+const pieceNames = {
+  p: "pawn",
+  n: "knight",
+  b: "bishop",
+  r: "rook",
+  q: "queen",
+  k: "king",
 };
 
 const boardEl = document.querySelector("#board");
@@ -86,10 +95,19 @@ function sideName(color) {
   return color === "w" ? "White" : "Black";
 }
 
+function puzzleStartingSide() {
+  return currentPuzzle().fen.split(" ")[1];
+}
+
 function squareList() {
   const files = orientation === "white" ? ["a", "b", "c", "d", "e", "f", "g", "h"] : ["h", "g", "f", "e", "d", "c", "b", "a"];
   const ranks = orientation === "white" ? [8, 7, 6, 5, 4, 3, 2, 1] : [1, 2, 3, 4, 5, 6, 7, 8];
   return ranks.flatMap((rank) => files.map((file) => `${file}${rank}`));
+}
+
+function isLightSquare(square) {
+  const fileNumber = square.charCodeAt(0) - 96;
+  return (fileNumber + Number(square[1])) % 2 === 1;
 }
 
 function moveObjectFromUci(uci) {
@@ -111,47 +129,65 @@ function buildAttemptedMove(from, to) {
   return move;
 }
 
+function addCoordinate(button, value, className) {
+  const label = document.createElement("span");
+  label.className = `coordinate ${className}`;
+  label.textContent = value;
+  label.setAttribute("aria-hidden", "true");
+  button.append(label);
+}
+
 function updatePuzzleText() {
   const puzzle = currentPuzzle();
+  const startingSide = sideName(puzzleStartingSide());
   titleEl.textContent = puzzle.title;
   descriptionEl.textContent = puzzle.description;
   ratingEl.textContent = puzzle.rating;
   themeEl.textContent = puzzle.theme;
-  sideEl.textContent = `${sideName(chess.turn())} to move`;
+  sideEl.textContent = `${startingSide} to move`;
   counterEl.textContent = `${puzzleIndex + 1} / ${puzzles.length}`;
+  counterEl.setAttribute("aria-label", `Puzzle ${puzzleIndex + 1} of ${puzzles.length}`);
 }
 
 function renderBoard() {
   boardEl.innerHTML = "";
-  const legalSquares = new Set(legalTargets.map((move) => move.to));
+  boardEl.setAttribute("aria-label", `Interactive chess board, ${orientation === "white" ? "White" : "Black"} side at the bottom`);
 
-  squareList().forEach((square, index) => {
+  const legalMovesByTarget = new Map(legalTargets.map((move) => [move.to, move]));
+  const leftFile = orientation === "white" ? "a" : "h";
+  const bottomRank = orientation === "white" ? "1" : "8";
+
+  squareList().forEach((square) => {
     const button = document.createElement("button");
     const piece = chess.get(square);
-    const isLight = (Math.floor(index / 8) + (index % 8)) % 2 === 0;
+    const legalMove = legalMovesByTarget.get(square);
 
-    button.className = `square ${isLight ? "light" : "dark"}`;
+    button.className = `square ${isLightSquare(square) ? "light" : "dark"}`;
     button.type = "button";
     button.dataset.square = square;
-    button.setAttribute("aria-label", square);
+    button.setAttribute("role", "gridcell");
+    button.setAttribute(
+      "aria-label",
+      piece ? `${square}, ${sideName(piece.color)} ${pieceNames[piece.type]}` : `${square}, empty`,
+    );
 
-    if (square === selectedSquare) button.classList.add("selected");
-    if (legalSquares.has(square)) button.classList.add("legal");
+    if (square === selectedSquare) {
+      button.classList.add("selected");
+      button.setAttribute("aria-selected", "true");
+    }
+    if (legalMove) button.classList.add(legalMove.captured ? "capture" : "legal");
     if (lastMove && (square === lastMove.from || square === lastMove.to)) button.classList.add("last-move");
 
     if (piece) {
       const pieceSpan = document.createElement("span");
-      pieceSpan.className = piece.color === "w" ? "piece-white" : "piece-black";
+      pieceSpan.className = `piece ${piece.color === "w" ? "piece-white" : "piece-black"}`;
       pieceSpan.textContent = pieces[`${piece.color}${piece.type}`];
+      pieceSpan.setAttribute("aria-hidden", "true");
       button.append(pieceSpan);
     }
 
-    if ((orientation === "white" && square.endsWith("1")) || (orientation === "black" && square.endsWith("8"))) {
-      const label = document.createElement("span");
-      label.className = "square-label";
-      label.textContent = square[0];
-      button.append(label);
-    }
+    if (square[1] === bottomRank) addCoordinate(button, square[0], "file-label");
+    if (square[0] === leftFile) addCoordinate(button, square[1], "rank-label");
 
     button.addEventListener("click", () => handleSquareClick(square));
     boardEl.append(button);
