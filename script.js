@@ -44,18 +44,18 @@ const puzzles = [
 ];
 
 const pieces = {
-  wp: "â™™",
-  wn: "â™˜",
-  wb: "â™—",
-  wr: "â™–",
-  wq: "â™•",
-  wk: "â™”",
-  bp: "â™Ÿ",
-  bn: "â™",
-  bb: "â™",
-  br: "â™œ",
-  bq: "â™›",
-  bk: "â™š",
+  wp: "\u2659",
+  wn: "\u2658",
+  wb: "\u2657",
+  wr: "\u2656",
+  wq: "\u2655",
+  wk: "\u2654",
+  bp: "\u265f",
+  bn: "\u265e",
+  bb: "\u265d",
+  br: "\u265c",
+  bq: "\u265b",
+  bk: "\u265a",
 };
 
 const pieceNames = {
