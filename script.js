@@ -102,6 +102,15 @@ function moveToUci(move) {
   return `${move.from}${move.to}${move.promotion || ""}`;
 }
 
+function buildAttemptedMove(from, to) {
+  const piece = chess.get(from);
+  const move = { from, to };
+  if (piece?.type === "p" && (to.endsWith("8") || to.endsWith("1"))) {
+    move.promotion = "q";
+  }
+  return move;
+}
+
 function updatePuzzleText() {
   const puzzle = currentPuzzle();
   titleEl.textContent = puzzle.title;
@@ -179,7 +188,7 @@ function handleSquareClick(square) {
     return;
   }
 
-  const attemptedMove = { from: selectedSquare, to: square, promotion: "q" };
+  const attemptedMove = buildAttemptedMove(selectedSquare, square);
   let move;
 
   try {
