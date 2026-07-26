@@ -50,12 +50,17 @@
               <p class="studio-line">Puzzle</p>
               <h2 id="trainer-title">Find the best move</h2>
             </div>
-            <div class="puzzle-counter" id="puzzle-counter">1 / 5</div>
+            <div class="puzzle-counter" id="puzzle-counter" aria-label="Puzzle 1 of 5">1 / 5</div>
           </div>
 
           <div class="trainer-layout">
             <div class="board-wrap">
-              <div class="board" id="board" aria-label="Interactive chess board"></div>
+              <div
+                class="board"
+                id="board"
+                role="grid"
+                aria-label="Interactive chess board, White side at the bottom"
+              ></div>
             </div>
 
             <aside class="puzzle-side" aria-label="Puzzle information">
@@ -68,10 +73,12 @@
               <div class="meta-grid">
                 <span id="puzzle-rating">Easy</span>
                 <span id="puzzle-theme">Mate</span>
-                <span id="puzzle-side-to-move">White</span>
+                <span id="puzzle-side-to-move">White to move</span>
               </div>
 
-              <p class="status" id="status">Choose a piece, then choose the target square.</p>
+              <p class="status" id="status" aria-live="polite">
+                Choose a piece, then choose the target square.
+              </p>
 
               <div class="controls" aria-label="Puzzle controls">
                 <button class="button primary" id="next-puzzle" type="button">Next puzzle</button>
