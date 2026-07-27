@@ -460,7 +460,7 @@ async function initialize() {
   statusEl.textContent = "Loading the puzzle collection.";
 
   try {
-    const response = await fetch("puzzles.json?v=1");
+    const response = await fetch("puzzles.json?v=2");
     if (!response.ok) throw new Error(`Puzzle pack request failed: ${response.status}`);
     const data = await response.json();
     if (!Array.isArray(data.puzzles) || data.puzzles.length < 1000) {
