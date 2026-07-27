@@ -224,7 +224,7 @@ h3 {
 }
 
 .puzzle-counter {
-  min-width: 58px;
+  min-width: 72px;
   padding: 7px 10px;
   border-radius: 999px;
   color: #ffffff;
@@ -232,6 +232,20 @@ h3 {
   font-size: 0.78rem;
   font-weight: 850;
   text-align: center;
+}
+
+.puzzle-progress {
+  height: 4px;
+  overflow: hidden;
+  background: rgba(6, 63, 54, 0.12);
+}
+
+.puzzle-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-2), var(--bordo));
+  transition: width 240ms ease;
 }
 
 .trainer-layout {
@@ -332,8 +346,11 @@ h3 {
 
 .piece-white {
   color: #ffffff;
-  -webkit-text-stroke: 0.45px rgba(7, 24, 23, 0.75);
-  text-shadow: 0 2px 4px rgba(7, 24, 23, 0.38);
+  -webkit-text-stroke: 1px #123c36;
+  paint-order: stroke fill;
+  text-shadow:
+    0 1px 0 #123c36,
+    0 2px 4px rgba(7, 24, 23, 0.48);
 }
 
 .piece-black {
@@ -401,6 +418,11 @@ h3 {
   background: rgba(246, 220, 231, 0.54);
   color: var(--bordo-dark);
   font-weight: 700;
+}
+
+.sound-toggle[aria-pressed="false"] {
+  color: var(--muted);
+  background: rgba(205, 220, 223, 0.38);
 }
 
 .section {
@@ -529,5 +551,9 @@ h3 {
 
   .button:hover {
     transform: none;
+  }
+
+  .puzzle-progress span {
+    transition: none;
   }
 }
